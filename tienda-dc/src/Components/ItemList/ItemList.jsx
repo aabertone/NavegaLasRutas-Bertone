@@ -3,6 +3,9 @@ import Articulos from '../Articulos/Articulos'
 import './ItemList.css'
 
 const ItemList = ({productos}) => {
+  if (!productos || productos.length === 0) {
+    return <div>Cargando</div>
+  }
   return (
     <div className="producard">
         {productos.map(articulo => <Articulos key={articulo.id} {...articulo} />)}
